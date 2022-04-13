@@ -23,7 +23,7 @@ Here, a custom command `\revised{}` is being used to draw the reader's attention
 
 Running the terminal 
 
-`tag_stripper('example.tex','output.tex','\revised{}')`
+`tag_stripper('example.tex','example_output.tex','\revised{}')`
 
 writes a new file `output.tex` which shows the same document with the `\revised{}` commands and their associated closing brackets removed.
 
@@ -44,9 +44,19 @@ I am using the color magenta to show changes I have made since you last saw this
 
 
 ## To Install
+In the terminal, clone the github repository using the command:
 
+`git clone git@github.com:CaseyMiddleton/tag_stripper.git`
+
+You should now have the `tag_stripper` repo on your machine, containing example files and source code. 
 
 ## To Run
-The syntax to run this script is as follows:
-
-`tag_stripper(<input filename>, <output filename>, <command to remove>)`
+The syntax to run this script from the command line is as follows:
+``` 
+$ python
+>>> input_file = '< path to input file >'
+>>> output_file = '< path to output file and desired filename >'
+>>> command = '\ < command to remove with opening and closing brackets >'
+>>> import tag_stripper; tag_stripper.remove_cmd(input_file,output_file,command)
+```
+Note that for LaTeX commands beginning with '\', such as `\revised{}`, an extra \ is required when the command is specified. 
