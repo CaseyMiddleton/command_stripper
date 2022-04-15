@@ -19,13 +19,13 @@ I am using the color magenta to show \revised{changes I have made} since you las
 \end{document}
 ```
 
-Here, a custom command `\revised{}` is being used to draw the reader's attention to changes that have been made in the document. Once changes are accepted, these commands and their associated closing brackets can be removed using `tag_stripper`. 
+Here, a custom command `\revised{}` is being used to draw the reader's attention to changes that have been made in the document. Once changes are accepted, these commands and their associated closing brackets can be removed using `tag_stripper.py`. 
 
-Running the terminal 
+From the command line,
 
-`tag_stripper('example.tex','example_output.tex','\revised{}')`
+`python tag_stripper.py example.tex example_output.tex revised)`
 
-writes a new file `output.tex` which shows the same document with the `\revised{}` commands and their associated closing brackets removed.
+writes a new file `example_output.tex` which shows the same document with the `\revised{}` commands and their associated closing brackets removed.
 
 ```
 \documentclass[11pt]{article} 
@@ -48,15 +48,11 @@ In the terminal, clone the github repository using the command:
 
 `git clone git@github.com:CaseyMiddleton/tag_stripper.git`
 
-You should now have the `tag_stripper` repo on your machine, containing example files and source code. 
+You should now have a copy of the `tag_stripper` repository on your machine, containing example files and source code. 
 
 ## To Run
 The syntax to run this script from the command line is as follows:
 ``` 
-$ python
->>> input_file = '< path to input file >'
->>> output_file = '< path to output file and desired filename >'
->>> command = '\ < command to remove with opening and closing brackets >'
->>> import tag_stripper; tag_stripper.remove_cmd(input_file,output_file,command)
+$ python tag_stripper.py <path to input file> <path to output file> <command to remove>
 ```
-Note that for LaTeX commands beginning with '\', such as `\revised{}`, an extra \ is required when the command is specified. 
+If no output filename is provided, output will be stored in `inputfile_no_command'.
