@@ -3,12 +3,14 @@
 # Developed by Casey E. Middleton
 # See https://github.com/CaseyMiddleton/tag_stripper for instructions for use
 
+import sys
+
 def remove_cmd(input_filename,output_filename,cmd):
     # detect bracket type using cmd
-    open_bracket = cmd[-2]
-    close_bracket = cmd[-1]
-    cmd_orig = cmd # keep a record of original command with open and closing brackets
-    cmd = cmd[0:-1] # remove closing bracket
+    open_bracket = "{"
+    close_bracket = "}"
+    cmd_orig = "\\"+cmd
+    cmd = "\\" + cmd + open_bracket
 
     # Read in text file
     file = open(input_filename)
@@ -71,3 +73,22 @@ def contains(wrd,ii):
         if wrd[i:i+ii_len] == ii:
             return True
     return False
+
+def main():
+    # User should input three arguments
+    if len(sys.argv) < 3 or len(sys.argv) > 4:
+        print("Argument Error \n To run file, please input: \n python tag_stripper.py <input_filename> <output_filename> <command>")
+        sys.exit(1)
+    # if only two arguments are provided, create output filename
+    input_filename = str(sys.argv[1])
+    if len(sys.argv) == 3:
+        command = str(sys.argv[2])
+        output_filename = input_filename[0:(len(input_filename)-4)] + "_no_" + command + input_filename[(len(input_filename)-4):len(input_filename)]
+    else:
+        output_filename = str(sys.argv[2])
+        command = str(sys.argv[3])
+
+    remove_cmd(input_filename,output_filename,command)
+
+if __name__ == '__main__':
+    main()
