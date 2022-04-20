@@ -67,4 +67,4 @@ If no output filename is provided, output will be stored in `inputfile_no_comman
 To manually input arguments, replace lines 84--86 in `tag_stripper.py` with the desired input and output filenames and command to be removed.
 
 ### Questions
-This script handles basic commands in the form of `\command{}` in LaTeX! If you have any questions, problems, or suggestions for improvement, please email [Casey.Middleton@colorado.edu](Casey.Middleton@colorado.edu).
+This script handles basic commands in the form of `\command{}` in LaTeX! If you have any questions, problems, or suggestions for improvement, please email <Casey.Middleton@colorado.edu>.
