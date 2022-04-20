@@ -74,19 +74,42 @@ def contains(wrd,ii):
             return True
     return False
 
+'''
+-------------------------------------------------------------------------------
+-----------------------    Change Me    ---------------------------------------
+-------------------------------------------------------------------------------
+replace file path to input and output files and \command{} to remove to run script
+'''
+def manual_input():
+    input_filename = "example.tex"
+    output_filename = "example_output.tex"
+    command = "revised"
+    return (input_filename, output_filename, command)
+'''
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+'''
+
 def main():
     # User should input three arguments
     if len(sys.argv) < 3 or len(sys.argv) > 4:
-        print("Argument Error \n To run file, please input: \n python tag_stripper.py <input_filename> <output_filename> <command>")
-        sys.exit(1)
+        # if no user input, assume manual input using manual_input() function
+        if len(sys.argv) == 1:
+            input_filename, output_filename, command = manual_input()
+        # if user attempted bash run but had an improper number of arguments, send error message
+        else:
+            print("Argument Error \n To run file, please input: \n python tag_stripper.py <input_filename> <output_filename> <command>")
+            sys.exit(1)
     # if only two arguments are provided, create output filename
-    input_filename = str(sys.argv[1])
-    if len(sys.argv) == 3:
-        command = str(sys.argv[2])
-        output_filename = input_filename[0:(len(input_filename)-4)] + "_no_" + command + input_filename[(len(input_filename)-4):len(input_filename)]
     else:
-        output_filename = str(sys.argv[2])
-        command = str(sys.argv[3])
+        input_filename = str(sys.argv[1])
+        if len(sys.argv) == 3:
+            command = str(sys.argv[2])
+            output_filename = input_filename[0:(len(input_filename)-4)] + "_no_" + command + input_filename[(len(input_filename)-4):len(input_filename)]
+        else:
+            output_filename = str(sys.argv[2])
+            command = str(sys.argv[3])
 
     remove_cmd(input_filename,output_filename,command)
 
