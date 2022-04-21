@@ -4,7 +4,7 @@ Remove unwanted LaTeX commands and their associated closing brackets
 ## Example
 Consider the .tex file given in `example.tex`:
 
-<img width="814" alt="revised_unstripped" src="https://user-images.githubusercontent.com/67121429/164487946-4ddfff8d-1f09-4e60-baae-dde3ef5bb4c6.png">
+<img width="814" alt="revised_unstripped" src="https://user-images.githubusercontent.com/67121429/164489012-dd3a6afb-5c2f-4d98-9cc2-a5197a1e6ac5.png">
 <img width="454" alt="output_unstripped" src="https://user-images.githubusercontent.com/67121429/164488183-85aa5288-a44a-4657-af0c-17aa3518feb6.png">
 
 Here, a custom command `\revised{}` is being used to draw the reader's attention to changes that have been made in the document. Once changes are accepted, these commands and their associated closing brackets can be removed using `tag_stripper.py`. 
