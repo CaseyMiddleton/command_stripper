@@ -4,20 +4,8 @@ Remove unwanted LaTeX commands and their associated closing brackets
 ## Example
 Consider the .tex file given in `example.tex`:
 
-```
-\documentclass[11pt]{article} 
-
-\usepackage{amsmath}
-\newcommand{\revised}[1]{\textcolor{magenta}{#1}} 
-
-\begin{document}
-
-I am using the color magenta to show \revised{changes I have made} since you last saw this document. 
-
-\section*{Some changes occur \revised{within section headers} and some do not.}
-
-\end{document}
-```
+<img width="814" alt="revised_unstripped" src="https://user-images.githubusercontent.com/67121429/164487946-4ddfff8d-1f09-4e60-baae-dde3ef5bb4c6.png">
+<img width="454" alt="output_unstripped" src="https://user-images.githubusercontent.com/67121429/164488183-85aa5288-a44a-4657-af0c-17aa3518feb6.png">
 
 Here, a custom command `\revised{}` is being used to draw the reader's attention to changes that have been made in the document. Once changes are accepted, these commands and their associated closing brackets can be removed using `tag_stripper.py`. 
 
@@ -27,20 +15,8 @@ From the command line,
 
 writes a new file `example_output.tex` which shows the same document with the `\revised{}` commands and their associated closing brackets removed.
 
-```
-\documentclass[11pt]{article} 
-
-\usepackage{amsmath}
-\newcommand{\revised}[1]{\textcolor{magenta}{#1}} 
-
-\begin{document}
-
-I am using the color magenta to show changes I have made since you last saw this document. 
-
-\section*{Some changes occur within section headers and some do not.}
-
-\end{document}
-```
+<img width="804" alt="revised_stripped" src="https://user-images.githubusercontent.com/67121429/164488235-af2d21d1-58ea-43ce-9141-fe8696ed92f2.png">
+<img width="440" alt="output_stripped" src="https://user-images.githubusercontent.com/67121429/164488246-c59df21e-7b31-49c0-b4cd-ef5c7e305c27.png">
 
 
 ## To Install
