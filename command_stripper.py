@@ -1,7 +1,7 @@
 #### LaTeX tag stripper
 # Remove LaTeX commands and the associated closing bracket
 # Developed by Casey E. Middleton
-# See https://github.com/CaseyMiddleton/tag_stripper for instructions for use
+# See https://github.com/CaseyMiddleton/command_stripper for instructions for use
 
 import sys
 
