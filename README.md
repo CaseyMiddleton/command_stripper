@@ -1,4 +1,4 @@
-# tag_stripper
+# command_stripper
 Remove unwanted LaTeX commands and their associated closing brackets
 
 ## Example
