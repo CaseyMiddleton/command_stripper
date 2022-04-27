@@ -7,11 +7,11 @@ Consider the .tex file given in `example.tex`:
 <img width="814" alt="revised_unstripped" src="https://user-images.githubusercontent.com/67121429/164489012-dd3a6afb-5c2f-4d98-9cc2-a5197a1e6ac5.png">
 <img width="454" alt="output_unstripped" src="https://user-images.githubusercontent.com/67121429/164488183-85aa5288-a44a-4657-af0c-17aa3518feb6.png">
 
-Here, a custom command `\revised{}` is being used to draw the reader's attention to changes that have been made in the document. Once changes are accepted, these commands and their associated closing brackets can be removed using `tag_stripper.py`. 
+Here, a custom command `\revised{}` is being used to draw the reader's attention to changes that have been made in the document. Once changes are accepted, these commands and their associated closing brackets can be removed using `command_stripper.py`. 
 
 From the command line,
 
-`python tag_stripper.py example.tex example_output.tex revised`
+`python command_stripper.py example.tex example_output.tex revised`
 
 writes a new file `example_output.tex` which shows the same document with the `\revised{}` commands and their associated closing brackets removed.
 
@@ -22,9 +22,9 @@ writes a new file `example_output.tex` which shows the same document with the `\
 ## To Install
 In the terminal, clone the github repository using the command:
 
-`git clone git@github.com:CaseyMiddleton/tag_stripper.git`
+`git clone git@github.com:CaseyMiddleton/command_stripper.git`
 
-You should now have a copy of the `tag_stripper` repository on your machine, containing example files and source code. 
+You should now have a copy of the `command_stripper` repository on your machine, containing example files and source code. 
 
 ## To Run
 
@@ -34,13 +34,13 @@ This script requires the filename to be modified and the `\command{}` to be remo
 
 The syntax to run this script from the command line is as follows:
 ``` 
-$ python tag_stripper.py <path to input file> <path to output file> <command to remove>
+$ python command_stripper.py <path to input file> <path to output file> <command to remove>
 ```
 If no output filename is provided, output will be stored in `inputfile_no_command`.
 
 ### From python 
 
-To manually input arguments, replace lines 84--86 in `tag_stripper.py` with the desired input and output filenames and command to be removed.
+To manually input arguments, replace lines 84--86 in `command_stripper.py` with the desired input and output filenames and command to be removed.
 
 ### Questions
 This script handles basic commands in the form of `\command{}` in LaTeX! If you have any questions, problems, or suggestions for improvement, please email <Casey.Middleton@colorado.edu>.
